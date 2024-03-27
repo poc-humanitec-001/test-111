@@ -21,6 +21,8 @@ containers:
       DB_PASSWORD: ${resources.db.password}
       DB_HOST: ${resources.db.host}
       DB_PORT: ${resources.db.port}
+      STORAGE_CONTAINER: ${resources.shared-storage.container}
+      STORAGE_ACCOUNT: ${resources.shared-storage.account}
 
 # Define the resources that this service needs
 resources:
@@ -34,3 +36,5 @@ resources:
       port: 80
   db:  # We need a database to store data
     type: mysql
+  shared-storage:
+    type: azure-blob
